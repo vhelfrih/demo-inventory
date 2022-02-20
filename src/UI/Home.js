@@ -32,7 +32,7 @@ const Home = (props) => {
 
   useEffect(() => {
     fetch(
-      "https://inventory-4c09f-default-rtdb.europe-west1.firebasedatabase.app/items.json"
+      "https://fir-inventory-36ae8-default-rtdb.firebaseio.com/items.json"
     )
       .then((response) => response.json())
       .then((responseData) => {
@@ -54,7 +54,7 @@ const Home = (props) => {
   const addItemHandler = (item) => {
     setIsLoading(true);
     fetch(
-      "https://inventory-4c09f-default-rtdb.europe-west1.firebasedatabase.app/items.json",
+      "https://fir-inventory-36ae8-default-rtdb.firebaseio.com/items.json",
       {
         method: "POST",
         body: JSON.stringify(item),
@@ -74,7 +74,7 @@ const Home = (props) => {
   const removeItemHandler = (itemId) => {
     setIsLoading(true);
     fetch(
-      `https://inventory-4c09f-default-rtdb.europe-west1.firebasedatabase.app/items/${itemId}.json`,
+      `https://fir-inventory-36ae8-default-rtdb.firebaseio.com/items/${itemId}.json`,
       {
         method: "DELETE",
       }
